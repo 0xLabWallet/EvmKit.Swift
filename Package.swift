@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "EvmKit",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v15),
     ],
     products: [
         .library(
@@ -18,10 +18,10 @@ let package = Package(
         .package(url: "https://github.com/groue/GRDB.swift.git", .upToNextMajor(from: "6.0.0")),
         .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
 
-        .package(url: "https://github.com/0xLabWallet/HsCryptoKit.Swift.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/0xLabWallet/HdWalletKit.Swift.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/0xLabWallet/HsCryptoKit.Swift.git", .upToNextMajor(from: "1.0.1")),
+        .package(url: "https://github.com/0xLabWallet/HdWalletKit.Swift.git", .upToNextMajor(from: "1.0.1")),
         .package(url: "https://github.com/0xLabWallet/HsToolKit.Swift.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/0xLabWallet/HsExtensions.Swift.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/0xLabWallet/HsExtensions.Swift.git", .upToNextMajor(from: "1.0.1")),
     ],
     targets: [
         .target(
