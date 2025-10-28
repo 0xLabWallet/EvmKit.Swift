@@ -8,12 +8,14 @@ class EtherscanTransactionProvider {
     private let baseUrl: String
     private let apiKey: String
     private let address: Address
+    private let chainId: Int
 
-    init(baseUrl: String, apiKey: String, address: Address, logger: Logger) {
+    init(baseUrl: String, apiKey: String, address: Address, chainId: Int logger: Logger) {
         networkManager = NetworkManager(interRequestInterval: 1, logger: logger)
         self.baseUrl = baseUrl
         self.apiKey = apiKey
         self.address = address
+        self.chainId = chainId
     }
 
     private func fetch(params: [String: Any]) async throws -> [[String: Any]] {
@@ -21,6 +23,7 @@ class EtherscanTransactionProvider {
 
         var parameters = params
         parameters["apikey"] = apiKey
+        parameters["chainid"] = chainId
 
         let json = try await networkManager.fetchJson(url: urlString, method: .get, parameters: parameters, responseCacherBehavior: .doNotCache)
 
