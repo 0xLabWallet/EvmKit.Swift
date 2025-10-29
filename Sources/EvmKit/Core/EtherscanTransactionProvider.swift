@@ -10,7 +10,7 @@ class EtherscanTransactionProvider {
     private let address: Address
     private let chainId: Int
 
-    init(baseUrl: String, apiKey: String, address: Address, chainId: Int logger: Logger) {
+    init(baseUrl: String, apiKey: String, address: Address, chainId: Int, logger: Logger) {
         networkManager = NetworkManager(interRequestInterval: 1, logger: logger)
         self.baseUrl = baseUrl
         self.apiKey = apiKey
